@@ -18,192 +18,141 @@ from pyrogram.errors import MessageNotModified
 @app.on_message(
     command("الاوامر")
 )
-async def cr_source(client: Client, message: Message):
-    await message.reply_photo(
-        photo=f"https://graph.org/file/c973727bddf803e028539.jpg",
-        caption=f"""**⩹━★⊷━⌞ 𝘾𝙍 • 𝙎𝙊𝙐𝙍𝘾𝙀 ⌝━⊶★━⩺**\nمرحبا بك عزيزي {message.from_user.mention}\nهذا قسم الاوامر الخاص بسورس كرستين \nلمعرفة الاوامر اضغط على الأزرار بالأسفل👇\n**⩹━★⊷━⌞ 𝘾𝙍 • 𝙎𝙊𝙐𝙍𝘾𝙀 ⌝━⊶★━⩺**""",
+async def khalid(client: Client, message: Message):
+    await message.reply_video(
+        video=f"https://telegra.ph/file/dc6751255ec8481ace945.mp4",
+        caption=f""" اهلين فيك في اوامر بوت الكسا 🎶\n\n -› **جميع اوامر البوت موجودة بالاسفل**\n\n• = » [ᴄʜᴀɴɴᴇʟ](t.me/FH_KP)""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "اوامر الجروبات", callback_data="gr"),
-                    InlineKeyboardButton(
-                        "اوامر القنوات", callback_data="ch"),  
-                 ],[
-                    InlineKeyboardButton(
-                        "اوامر الادمن", callback_data="adm"), 
+                        "السورس", callback_data=f"gg"),
                 ],[
-                
                     InlineKeyboardButton(
-                        "★⌞ 𝘾𝙍 • 𝙎𝙊𝙐𝙍𝘾𝙀 ⌝⚡", url=f"https://t.me/pp_g3"),
+                        "اوامر المجموعة", callback_data=f"g1"),
+
+                    InlineKeyboardButton(
+                        "اوامر القنوات", callback_data=f"g2"),
+
+                ],[
+                    InlineKeyboardButton(
+                        "إغـلاق", callback_data=f"close"),                    
+
                 ],
-
             ]
-
         ),
-
     )
-
-    
-@app.on_callback_query(filters.regex("gr"))
-async def cr_usage(_, callback_query: CallbackQuery):
-    await callback_query.answer()
-    await callback_query.message.edit_text(
-        text="""**⩹━★⊷⌯⌞ 𝘾𝙍 • 𝙎𝙊𝙐𝙍𝘾𝙀 ⌝⌯⊶★━⩺**
-★¦ اهلا بك عزيزي في قسم اوامر التشغيل في الجروبات
-★¦ تشغيل + اسم الاغنيه
-★¦ فديو + اسم الاغنيه
-★¦ #فيديو + اسم الاغنيه
-★¦ #فديو + اسم الاغنيه
-★¦ {NAME_BOT} + اسم الاغنيه
-★¦ /فيديو + اسم الاغنيه
-★¦ /ق شغل + اسم الاغنيه
-★¦ /تشغيل + اسم الاغنيه
-★¦ cvplay + اسم الاغنيه
-★¦ cplay + اسم الاغنيه
-★¦ /vplay + اسم الاغنيه
-★¦ /play + اسم الاغنيه
-★¦ #تشغيل + اسم الاغنيه
-★¦ فيديو + اسم الاغنيه
-★¦ سورة + اسم السورة 
-★¦ cvplayforce + اسم الاغنيه
-★¦ cplayforce + اسم الاغنيه
-★¦ vplayforce + اسم الاغنيه
-★¦ playforce + اسم الاغنيه
-★¦ /cvplay + اسم الاغنيه
-★¦ vplay + اسم الاغنيه
-★¦ play + اسم الاغنيه
-
-**⩹━★⊷⌯⌞ 𝘾𝙍 • 𝙎𝙊𝙐𝙍𝘾𝙀 ⌝⌯⊶★━⩺**""",
-        reply_markup=InlineKeyboardMarkup(
+@app.on_callback_query(filters.regex("hmaya"))
+async def bhr(_, query: CallbackQuery):
+   await query.edit_message_caption(caption =f""" اهلين فيك في اوامر بوت الكسا 🎶\n\n -› **جميع اوامر البوت موجودة بالاسفل**\n\n• = » [ᴄʜᴀɴɴᴇʟ](t.me/FH_KP)""",reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(
-                        "التالي", callback_data="ch"), 
-                    
+                      InlineKeyboardButton(
+                        "السورس", callback_data=f"gg"),
                 ],[
                     InlineKeyboardButton(
-                        "الرئيسية", callback_data="back"), 
-                    
-                ]
-            ]
-        )
-    )
+                        "اوامر المجموعة", callback_data=f"g1"),
 
-@app.on_callback_query(filters.regex("ch"))
-async def cr_usage(_, callback_query: CallbackQuery):
-    await callback_query.answer()
-    await callback_query.message.edit_text(
-        text="""**⩹━★⊷⌯⌞ 𝘾𝙍 • 𝙎𝙊𝙐𝙍𝘾𝙀 ⌝⌯⊶★━⩺**
-★¦ اهلا بك عزيزي في قسم اوامر التشغيل في القنوات
-★¦ شغل + اسم الاغنيه
-★¦ قناه + اسم الاغنيه
-★¦ مانو + اسم الاغنيه
-★¦ ق + اسم الاغنيه
-★¦ اغاني + اسم الاغنيه
-★¦ . + اسم الاغنيه
-★¦ / + اسم الاغنيه
-**⩹━★⊷⌯⌞ 𝘾𝙍 • 𝙎𝙊𝙐𝙍𝘾𝙀 ⌝⌯⊶★━⩺**""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
                     InlineKeyboardButton(
-                        "التالي", callback_data="adm"), 
-                    InlineKeyboardButton(
-                        "العودة", callback_data="gr"), 
+                        "اوامر القنوات", callback_data=f"g2"),
+
                 ],[
                     InlineKeyboardButton(
-                        "الرئيسية", callback_data="back"), 
-                    
-                ]
-            ]
-        )
-    )
+                        "إغـلاق", callback_data=f"close"),                    
 
-@app.on_callback_query(filters.regex("adm"))
-async def cr_usage(_, callback_query: CallbackQuery):
-    await callback_query.answer()
-    await callback_query.message.edit_text(
-        text="""**⩹━★⊷⌯⌞ 𝘾𝙍 • 𝙎𝙊𝙐𝙍𝘾𝙀 ⌝⌯⊶★━⩺**
-★¦ اهلا بك عزيزي في قسم اوامر تشغيل الادمن
-★¦ رفع ثانوي
-★¦ تنزيل ثانوي
-★¦ قائمة الثانويين
-★¦ رفع ادمن
-★¦ تنزيل ادمن
-★¦ قائمة الادمن
-★¦ حظر
-★¦ الغاء الحظر
-★¦ المحظورين
-★¦ حظر عام
-★¦ الغاء الحظر العام
-★¦ المحظورين عام
-★¦ اونلاين
-★¦ اذاعه
-★¦ تحديث
-★¦ logger
-★¦ ريلود
-★¦ وقف
-★¦ كمل
-★¦ اسكت
-★¦ اتكلم
-★¦ ايقاف
-★¦ تخطي
-★¦ @all
-★¦ all stop
-★¦ يوتيوب / تنزيل
-★¦ playing
-★¦ القائمه
-★¦ حذف القائمه
-★¦ تحديث
-★¦ الاحصائيات
-★¦ لايف
-★¦ مساعده
-★¦ الاعدادت
-★¦ بينج
-
-**⩹━★⊷⌯⌞ 𝘾𝙍 • 𝙎𝙊𝙐𝙍𝘾𝙀 ⌝⌯⊶★━⩺**""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "التالي", callback_data="gr"), 
-                    InlineKeyboardButton(
-                        "العودة", callback_data="ch"), 
-                ],[
-                    InlineKeyboardButton(
-                        "الرئيسية", callback_data="back"), 
-                    
-                ]
-            ]
-        )
-    )
-
-    
-@app.on_callback_query(filters.regex("back"))
-async def cr_back(_, callback_query: CallbackQuery):
-    await message.reply_photo(
-        photo=f"https://graph.org/file/c973727bddf803e028539.jpg",
-        caption=f"""**⩹━★⊷━⌞ 𝘾𝙍 • 𝙎𝙊𝙐𝙍𝘾𝙀 ⌝━⊶★━⩺**\nمرحبا بك عزيزي {message.from_user.mention}\nهذا قسم الاوامر الخاص بسورس كرستين \nلمعرفة الاوامر اضغط على الأزرار بالأسفل👇\n**⩹━★⊷━⌞ 𝘾𝙍 • 𝙎𝙊𝙐𝙍𝘾𝙀 ⌝━⊶★━⩺**""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "اوامر الجروبات", callback_data="gr"),
-                    InlineKeyboardButton(
-                        "اوامر القنوات", callback_data="ch"),  
-                 ],[
-                    InlineKeyboardButton(
-                        "اوامر الادمن", callback_data="adm"), 
-                ],[
-                
-                    InlineKeyboardButton(
-                        "★⌞ 𝘾𝙍 • 𝙎𝙊𝙐𝙍𝘾𝙀 ⌝⚡", url=f"https://t.me/pp_g3"),
                 ],
-
             ]
-
         ),
-
     )
+@app.on_callback_query(filters.regex("g1"))
+async def tt(_, query: CallbackQuery):
+   await query.edit_message_caption(caption =f"""ٓاهلـين حبـي  أليـك قائمة اوامـر التشغيل في المجموعه**
+        
+**اليك قائـمة الاوامــر 👇**
+          
 
+»**لتشغيل اغنيه اكتب : تشغيل او شغل**
+»**لأنهاء الاغنيه اكتب : ايقاف او انهاء**
+»**لايقاف الاغنيه مؤقت اكتب : قفي**
+»**لتكملة الاغنيه من الايقاف المؤقت اكتب : كمل او استمر**
+»**لتخطي الاغنيه اكتب : تخطي او التالي**
+»**لكتم البوت في المحادثه اكتب : اسڪتي**
+»**لألغاء كتم البوت في المحادثه اكتب : اتكلم او تكلمي**
+»**لتحميـل الاغانـي اڪتب : بحث او تحميل**""",
+       reply_markup=InlineKeyboardMarkup(
+          [
+               [                  
+                    InlineKeyboardButton(
+                        "تحديثات الكسا", callback_data=f"devmusic"),
+                ],[
+                    InlineKeyboardButton(
+                        "رجـوع 🎶", callback_data=f"hmaya"),
+               ],
+          ]
+        ),
+    )
+@app.on_callback_query(filters.regex("g2"))
+async def ddd(_, query: CallbackQuery):
+   await query.edit_message_caption(caption =f"""ٓاهلـين حبـي  أليـك قائمة اوامـر التشغيل في القناه**
+
+
+- لتشغيل اغنيه اكتب : شغل او تشغيل
+- لتشغيل فيديو اكتب : فيديو
+- لأنهاء الاغنيه اكتب : ايقاف او انهاء
+- لايقاف الاغنيه مؤقت اكتب : قفي او قف
+- لتكملة الاغنيه من الايقاف المؤقت اكتب : استمري او كملي
+- لتخطي الاغنيه اكتب : تخطي او التالي
+- لكتم البوت في الكول اكتب : /cmute
+- لألغاء كتم البوت في الكول اكتب : /cunmute""",
+       reply_markup=InlineKeyboardMarkup(
+               [
+                    [                  
+                    InlineKeyboardButton(
+                        "تحديثات الكسا", callback_data=f"devmusic"),
+                ],[
+                    InlineKeyboardButton(
+                        "رجـوع 🎶", callback_data=f"hmaya"),
+               ],
+          ]
+        ),
+    )
+@app.on_callback_query(filters.regex("gg"))
+async def devmusic(_, query: CallbackQuery):
+   await query.edit_message_caption(caption =f"""[ٓ» ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ʟɪɴᴅᴀ](https://t.me/FH_KP)\n\n[» ᴏɴᴇ ᴏғ ᴛʜᴇ ʙᴇsᴛ ᴛᴇʟᴇɢʀᴀᴍ ʙᴏᴛs](https://t.me/FH_KP)\n\n[» sᴏᴜʀᴄᴇ ʟɪɴᴅᴀ](https://t.me/FH_KP)""",
+       reply_markup=InlineKeyboardMarkup(
+          [
+               [
+                    InlineKeyboardButton(
+                        "𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁¹", url=f"https://t.me/FH_3B"),
+                    InlineKeyboardButton(
+                        "𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁²", url=f"https://t.me/Ooi_1i")
+                ],[
+                    InlineKeyboardButton(
+                        "𝙲𝙷𝙰𝙽𝙽𝙴𝙻", url=f"https://t.me/FH_KP"),
+                ],[
+                    InlineKeyboardButton(
+                        "رجـوع 🎶", callback_data=f"hmaya"),
+               ],
+          ]
+        ),
+    ) 
+@app.on_callback_query(filters.regex("devmusic"))
+async def devmusic(_, query: CallbackQuery):
+   await query.edit_message_caption(caption =f"""» اهلـين حبـي أليـك قائمة قنـوات بـوت الكسا**""",
+       reply_markup=InlineKeyboardMarkup(
+          [
+               [
+                    InlineKeyboardButton(
+                        "𝙲𝙷𝙰𝙽𝙽𝙴𝙻¹", url=f"https://t.me/FH_KP"),
+                    InlineKeyboardButton(
+                        "𝙲𝙷𝙰𝙽𝙽𝙴𝙻²", url=f"https://t.me/KB_HE")
+                ],[
+                    InlineKeyboardButton(
+                        "𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁¹", url=f"https://t.me/FH_3B"),
+                ],[
+                    InlineKeyboardButton(
+                        "رجـوع 🎶", callback_data=f"hmaya"),
+               ],
+          ]
+        ),
+    ) 
