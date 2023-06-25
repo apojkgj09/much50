@@ -21,13 +21,26 @@ OWNER_ID = list(
 HEROKU_API_KEY = getenv("HEROKU_API_KEY", None)
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME", None)
 
-UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/apojkgj09/much50")
+UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/apojkgj09/F50")
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 GIT_TOKEN = getenv("GIT_TOKEN", None)
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/KB_HE")
-SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/FH_KP")
-
+# Only  Links formats are  accepted for this Var value.
+CHANNEL_SUDO = getenv(
+    "CHANNEL_SUDO", "KB_HE"
+)  # معرف قناتك بدون @
+YAFA_NAME = getenv(
+    "YAFA_NAME", "نۨۨۨۨۨۨۨۨص֓ف֛يަ اࠗلثֻاࠗنۨۨۨۨۨۨۨۨيަ²³♡|𝅘𝅥𝅮|𖤟"
+)  # اسم قناتك
+YAFA_CHANNEL = getenv(
+   " YAFA_CHANNEL", "https://t.me/KB_HE"
+)  # رابط قناتك
+SUPPORT_CHANNEL = getenv(
+    "SUPPORT_CHANNEL", "https://t.me/KB_HE"
+)  # رابط قناتك
+SUPPORT_GROUP = getenv(
+    "SUPPORT_GROUP", "https://t.me/FH_KP"
+)  # رابط كروبك
 SUPPORT_HEHE = SUPPORT_GROUP.split("me/")[1]
 
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", "10080"))
